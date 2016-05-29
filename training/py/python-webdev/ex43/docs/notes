@@ -1,0 +1,20 @@
+My Game:
+
+Take care of chickens for the day. 
+  at 4:00am let them out of the coop in the morning, 
+  at 8:00am feed the chickens,
+  at 12:00pm, check the coop for eggs,
+  at 1:00pm, clean the coop, 
+  at 6:00pm, put them back in the coop at night. 
+Avoid letting the chickens out, or letting predators in. Dont let the rooster be
+bossy.
+
+todo:
+    Finish OpenCoop() formatting
+    comma after intro instead of \n
+    list formmating on checklist, review list comprehension 
+    remove numbers on action options, replace with \t
+    
+    copy finished OpenCoop to other scenes
+
+    ChecklistInstComplete Quips
