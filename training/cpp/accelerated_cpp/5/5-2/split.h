@@ -1,5 +1,5 @@
-#ifndef __split_h__
-#define __split_h__
+#ifndef GAURD_SPLIT_h
+#define GAURD_SPLIT_h
 
 #include <string>
 #include <vector>

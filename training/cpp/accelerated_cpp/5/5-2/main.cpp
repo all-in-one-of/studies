@@ -1,46 +1,73 @@
-/*
-
-Produced Permuted Index with the input phrases
-
-Read each line of the input and generate a set of rotations of that line. 
-Each rotation puts the next word of the input in the first position and 
-rotates the previous first word to the end of the phrase. Of course, it 
-will be important to know where the original phrase ends and where the 
-rotated beginning begins.
-
-//Sort the rotations.
-
-Unrotate and write the permuted index, which involves finding the separator, putting
-the phrase back together, and writing it properly formatted.
-*/
-
+#include <algorithm>
+#include <ctime>
+#include <fstream>
+#include <iomanip>
+#include <ios>
 #include <iostream>
+#include <list>
 #include <string>
 #include <vector>
 
-#include "permuted_rotation.h"
+#include "grade.h"
+#include "Student_info.h"
 
-using std::cout; using std::cin;     using std::endl;
-using std::string;
-using std::vector;
-
+using namespace std;
 
 int main() {
     
-    //Read Lines
-    string s;
-    getline(cin,s);
-    cout << "This is your string: " << s << endl;
+    //Vector or List
+    typedef list<Student_info> s_info_vec;
+    //typedef vector<Student_info> s_info_vec;
+    
+    //input file, or input stream
+    string filename = "10000_students";
+    fstream input ("./input/"+filename+".txt");
+    cout << "Reading input from "+filename+".txt ... " << endl;
+    //istream input = cin;
+    //cout << "Please enter student info: " << endl;
+    //cout << "Name, midterm, final, homework"
+    
+    s_info_vec students;
+    s_info_vec fails;
+    Student_info record;
+    string::size_type maxlen = 0; // the length of the longest name
+    
+    clock_t starttime = clock();
 
-    //Rotate Line for each word, return the rotations and the index of the original first word
-    vector<permuted_rotation> perm_rotations = rotations(s);
+    //Process Input
+    while (read(input, record)) {
+        // find length of longest name
+        maxlen = max(maxlen, record.name.size());
+        students.push_back(record);
+    }
     
-    //Outout the lines formated with the index seperated from the rest of the phrase
-    //    rots_ittr
-    //    print rots_itter.rotation[0] to rots_ittr.rotation[rots_itter.f_index]
-    //    print tab
-    //    print rots_itter.rotation[f_index] to rots_itter[end]
-     
+    clock_t endtime = clock();
+    double timediff = double(endtime - starttime); // CLOCKS_PER_SEC
+    
+    fails = extract_fails(students, 20);
+    
+    //Output
+    
+    // alphabetize the student records
+    //students.sort(compare);
+    
+    /*cout << endl << "Your student results are:" << endl;
+    cout << "(Failed students have been exluded)" << endl;
+    
+    // write the names and grades
+    for (vector<Student_info>::iterator iter = students.begin();
+    iter != students.end(); ++iter) {
+        
+        // write the name, padded on the right to maxlen + 1 characters
+        cout << iter->name
+        << string(maxlen + 1 - iter->name.size(), ' ');
+        
+        // compute and write the grade
+        streamsize prec = cout.precision();
+        cout << setprecision(3) << iter->grade << setprecision(prec) << endl;
+    }*/
+    
+    cout << "List: " << timediff << endl;
+    
     return 0;
-    
 }
