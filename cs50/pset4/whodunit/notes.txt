@@ -1,0 +1,45 @@
+BITMAPINFOHEADER
+    biWidth - width of image in px, does not include padding
+    biHeight - height in px
+    biSizeImage - total size in bytes, includes pixels and padding
+
+BITMAPFILEHEADER
+    bfSize - total size of file in bytes, includes pixels, padding and headers
+    bf.bfSize = bi.biSizeImage + 
+                sizeof(BITMAPFILEHEADER) +
+                sizeof(BITMAPINFOHEADER);
+                
+Questions
+    How does fread know to map data to struct pointer?
+    
+    
+// scaling image up
+
+for each row i
+    
+    for f // row multipler
+        
+        for each pixel j
+            
+            if row % f == 0 read pixel
+        
+            for f pixel mutlipler
+                write pixel
+    
+    write padding
+
+skip read padding            
+    
+            
+// scaling image down
+
+for each row i
+    
+    for each pixel j
+            
+        if pixel % 1/f sample value
+        if row % 1/f write value
+        
+        if pixel & row % 1/f write padding
+
+skip padding    

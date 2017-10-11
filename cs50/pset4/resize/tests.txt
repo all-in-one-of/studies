@@ -1,0 +1,10 @@
+2 small.bmp small_2.bmp
+3 small.bmp small_3.bmp
+2 smiley.bmp smiley_2.bmp
+3 smiley.bmp smiley_3.bmp
+0.5 large.bmp large_half.bmp
+0.3 large.bmp large_third.bmp
+0.25 large.bmp large_quart.bmp
+0.5 smiley.bmp smiley_half.bmp
+0.3 smiley.bmp smiley_third.bmp
+0.25 smiley.bmp smiley_quart.bmp

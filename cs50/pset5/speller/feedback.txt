@@ -1,0 +1,62 @@
+Hello,
+
+I am looking for feedback on my trie implementation for speller.
+My load and unload times are about 2-3x times longer than the teacher results
+
+
+Here is my structure:
+
+typedef struct trieNode {
+	bool is_word;
+	struct trieNode *children[MAX_CHILD_NODES];
+} trieNode;
+
+Load: 
+
+bool load(const char *dictionary) {
+    
+    if (DICTIONARY_TRIE == NULL)
+        DICTIONARY_TRIE = malloc(sizeof(trieNode));
+    
+    FILE *fp = fopen(dictionary, "r");
+    if (fp == NULL) {
+        printf("Could not open %s.\n", dictionary);
+        return false;
+    }
+
+    char word[LENGTH+1];
+
+    while (fgets(word, sizeof(word), fp)) {
+        trieInsert(DICTIONARY_TRIE, word); 
+    }
+
+    fclose(fp);
+    
+    return true;
+}
+
+
+int trieInsert(trieNode* root, const char* word) {
+    
+    // loop over chars in word
+	const char* c = NULL;
+	for (c = word; *c != '\0' && *c != '\n'; c++) {
+	  
+	    // get index from ascii value
+	    int i = getCharIndex(*c);
+	  
+	    // if node at this index is NULL, malloc new node
+	    if (root->children[i] == NULL) 
+	        root->children[i] = malloc(sizeof(trieNode));
+	    
+        // move to next node
+	    root = root->children[i];     
+
+	}
+	
+	//if at end of word, set is_word to true
+	if (*c=='\0' || *c == '\n')
+	    root->is_word = true;
+	
+    return 0;
+}

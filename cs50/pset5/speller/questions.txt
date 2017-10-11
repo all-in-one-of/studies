@@ -1,0 +1,38 @@
+0. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+    According to Merriam-Webster's Medical Dictionary,
+    pneumonoultramicroscopicsilicovolcanoconiosis is a
+    pneumoconiosis caused by inhalation of very fine
+    silicate or quartz dust.
+
+1. According to its man page, what does getrusage do?
+    getrusage() returns resource usage measures for, the calling process, all 
+    children of the calling process, or the calling thread
+    
+2. Per that same man page, how many members are in a variable of type struct rusage?
+    16
+    
+3. Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+    so we avoid creating unnecessary duplicates of rusage structs in memory
+
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+    
+    In the main for loop, we iterator over the characters in our text file. 
+    First we check if the current character is alphabetical, if it is we store 
+    it in an array which will become a string for our word. We proceed over the 
+    next characters until a non alphabetical string is found. If we find a 
+    number we skip over the subsequent alphabetical characters and reset our 
+    word string. This is so we dont store words with numbers. If our subsequent 
+    character is neither alphabetical or a number and our word length is greater 
+    than zero, we append the null character to our string, increment the number 
+    of words  we've checked, and then proceed to check the spelling of that 
+    word. If it is misspelled we increment a misspelled counter. We also check 
+    the time that it takes to check the spelling of the word. We then reset our 
+    word string to prepare for the next word. If a word becomes larger than our 
+    max length (LENGTH), then we skip over the remainder of the word and reset 
+    our word string.
+
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+    relying of fscanf would not allow us to check for max LENGTH or if words have digits while we are reading them in
+
+6. Why do you think we declared the parameters for check and load as const (which means "constant")?
+    the pointed data cannot be written to using the pointer
