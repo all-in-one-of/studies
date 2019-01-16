@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Transactions</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<ul class="nav flex-column">
+			<li><a href='/'>Transactions</a></li>
+			<li><a href='/uploadcsv/'>Upload CSV</a></li>
+		</ul>
+	</div>
+	<div class="content">
+	   {% block content %}
+	   {% endblock %}
+	</div>
+</body>

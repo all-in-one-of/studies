@@ -1,0 +1,23 @@
+<div>
+
+{% block content %}
+
+<div>
+	<h1>Enter Numbers</h1>
+	<form action="#" method="post" enctype="multipart/form-data">
+	{% csrf_token %} {{form}} 
+	<input type="submit" value="SumOfNumbers" />
+	</form>
+</div>
+
+<div>
+	<h1>Sum of Numbers</h1>
+	{% for data in sum_of_numbers %}
+		{{data.num1}} + {{data.num2}} = {{data.num1Num2Sum}}
+		<hr />
+	{% endfor %}
+</div>
+
+{% endblock %}
+
+</div>
