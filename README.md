@@ -55,13 +55,13 @@
 - http://www.techiedelight.com/top-algorithms-data-structures-concepts-computer-science/
 - https://techiedelight.quora.com/350%2B-Data-structures-programming-interview-questions?srid=hOqIb
 
-##Git
+## Git
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 
-##Regex
+## Regex
 - https://regex101.com/
 
-##Interviews
+## Interviews
 - https://www.amazon.ca/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
 
 ## Databases - RDBMS
