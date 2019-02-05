@@ -33,7 +33,6 @@
 - [visual learning - pythontutor](http://pythontutor.com)
 - [data structures and algos with python - online book](https://interactivepython.org/runestone/static/pythonds/Introduction/toctree.html)
 
-
 ## CPP 
 - http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-introduction
 - Accelerated C++ Programming.pdf 
@@ -45,7 +44,6 @@
 - [Math Open Ref](http://www.mathopenref.com/index.html)
 - [polytrop - complex numbers](http://polytrope.com/simplenumbers/)
 - [Eigen Vectors and Eigen Values](http://www.euclideanspace.com/maths/algebra/matrix/functions/eigenv/index.htm)
-
 
 ## Web Tools
 - https://www.desmos.com/calculator/nqfu5lxaij
@@ -59,8 +57,10 @@
 
 ##Git
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+
 ##Regex
 - https://regex101.com/
+
 ##Interviews
 - https://www.amazon.ca/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
 
