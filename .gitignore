@@ -1,0 +1,10 @@
+
+# directories
+inst
+htmlcov
+
+# extensions
+.pyc
+
+#other
+.coverage

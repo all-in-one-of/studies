@@ -1,0 +1,12 @@
+{
+    "entry_0": {
+        "element": {
+            "type": "hda",
+            "path": "./element/box.hdanc",
+            "create_script": "hou.node({parent_node}).createNode('box')"
+        },
+        "parent_node": "/obj",
+        "parms": "parm.json",
+        "anim": "clip.json"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "entry_0": {
+        "element": {
+            "type": "geometry_cache",
+            "path": "./element/pcloud.$F4.bgeo.sc",
+            "node_type": "file"
+        },
+        "parent_node": "/obj/box2",
+        "parms": "parm.json",
+        "anim": "clip.json"
+    }
+}
